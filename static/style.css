@@ -16,8 +16,9 @@ body {
 
 /* ===== MAIN CONTAINER ===== */
 .container {
-    width: 40%;
-    margin: 4rem auto;
+    max-width: 520px;
+    width: 92%;
+    margin: 3rem auto;
     background: #171717;
     border-radius: 18px;
     padding: 2.5rem;
@@ -180,19 +181,50 @@ body {
     .container {
         width: 90%;
         margin: 2rem auto;
+        padding: 2.2rem;
     }
 
     .weather__temperature {
         font-size: 3rem;
     }
 }
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .weather__search{
+        width:100%;
+        justify-content: center;
+    }
+    .weather__search input {
+        width: 100%;
+        max-width: 240px;
+    }
+    .weather__city {
+        font-size: 2rem;
+    }
 
-@media (max-width: 500px) {
+    .weather__temperature {
+        font-size: 2.6rem;
+    }
+    .welcome h1 {
+        font-size: 2rem;
+    }
+}
+/* Small Phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.8rem;
+    }
+
     .weather__info {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .weather__card {
+        padding: 1.2rem;
     }
 
     .weather__search input {
-        width: 180px;
+        max-width: 200px;
     }
 }
