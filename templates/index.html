@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="weather__header">
+            <form method="POST" class="weather__search">
+                <input
+                    type="text"
+                    name="city"
+                    placeholder="Search for a city..."
+                    value="{{ weather.city if weather }}"
+                >
+                <button type="submit">🔍</button>
+            </form>
+
+        </div>
+        
+        <!-- Welcome State(only before first search ever) -->
+        {% if not has_searched %}
+            <div class="welcome">
+                <h1>Welcome to Weather App</h1>
+                <p>Search for a city to see real-time weather updates.</p>
+            </div>
+        {% endif %}
+
+        <!-- Weather UI(valid city) -->
+        {% if weather %}
+            <div class="weather__body">
+                <h1 class="weather__city">{{ weather.city }}</h1>
+                <p class="weather__datetime">{{ weather.datetime }}</p>
+
+            <div class="weather__forecast">
+                {{ weather.description | title }}
+            </div>
+
+            <div class="weather__icon">
+                <img
+                    src="https://openweathermap.org/img/wn/{{ weather.icon }}@4x.png"
+                    alt="weather icon"
+                >
+            </div>
+
+            <div class="weather__temperature">
+                {{ weather.temperature }}°C
+            </div>
+
+            <div class="weather__minmax">
+                <p>Min: {{ weather.min_temp }}°C</p>
+                <p>Max: {{ weather.max_temp }}°C</p>
+            </div>
+        </div>
+
+
+        <!-- Extra Weather Details -->
+        <div class="weather__info">
+            <div class="weather__card">
+                <p>Real Feel</p>
+                <p>{{ weather.feels_like }}°C</p>
+            </div>
+
+            <div class="weather__card">
+                <p>Humidity</p>
+                <p>{{ weather.humidity }}%</p>
+            </div>
+
+            <div class="weather__card">
+                <p>Wind</p>
+                <p>{{ weather.wind_speed }} m/s</p>
+            </div>
+
+            <div class="weather__card">
+                <p>Pressure</p>
+                <p>{{ weather.pressure }} hPa</p>
+            </div>
+            
+        </div>
+        {% endif %}
+
+        <!-- Error Messaage(invalid city or empty input) -->
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+</div>
+</body>
+</html>
