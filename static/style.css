@@ -176,7 +176,11 @@ body {
     font-size: 0.9rem;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+/* Tablets & small laptops */
 @media (max-width: 900px) {
     .container {
         width: 90%;
@@ -188,16 +192,19 @@ body {
         font-size: 3rem;
     }
 }
-/* Mobile Devices */
+
+/* Mobile devices */
 @media (max-width: 600px) {
-    .weather__search{
-        width:100%;
+    .weather__search {
+        width: 100%;
         justify-content: center;
     }
+
     .weather__search input {
         width: 100%;
         max-width: 240px;
     }
+
     .weather__city {
         font-size: 2rem;
     }
@@ -205,11 +212,13 @@ body {
     .weather__temperature {
         font-size: 2.6rem;
     }
+
     .welcome h1 {
         font-size: 2rem;
     }
 }
-/* Small Phones */
+
+/* Small phones */
 @media (max-width: 480px) {
     .container {
         padding: 1.8rem;
