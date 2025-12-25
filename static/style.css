@@ -167,6 +167,18 @@ body {
     font-size: 1.1rem;
     font-weight: 500;
 }
+/*====FOOTER====*/
+.app_footer{
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.75rem;
+    opacity: 0.6;
+    letter-spacing: 0.3px;
+}
+.app__footer strong {
+    font-weight: 500;
+    opacity: 0.85;
+}
 
 /* ===== ERROR ===== */
 .error {
@@ -175,6 +187,7 @@ body {
     margin-top: 1.5rem;
     font-size: 0.9rem;
 }
+
 
 /* ================================================= */
 /* ================= RESPONSIVE ==================== */

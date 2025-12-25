@@ -6,8 +6,6 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
-
 <body>
     <div class="container">
 
@@ -91,6 +89,9 @@
         {% if error %}
             <p class="error">{{ error }}</p>
         {% endif %}
+        <footer class="app_footer">
+            A real-world project created by<strong>Aswin Thapa.</strong>
+        </footer>
 
 </div>
 </body>
